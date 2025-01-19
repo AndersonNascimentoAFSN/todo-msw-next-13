@@ -4,9 +4,9 @@ export interface ITodo {
   description: string;
 }
 
-export async function getTodo():  Promise<ITodo[] | undefined> {
+export async function getTodo() {
   try {
-    const response = await fetch('https://6331c51ecff0e7bf70f62b2c.mockapi.io/todo', {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/todo`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
